@@ -21,10 +21,7 @@ let appData = {
     },
     income: [
     
-    ],
-    characters: {
-
-    }
+    ]
 };
 
 console.log(appData);
@@ -45,10 +42,10 @@ appData.expenses[expenseItem] = expensePrice;
 //Добавляем свойство savings объекту appData
 let savings = 'savings';
 
-appData.characters[savings] = false;
+appData[savings] = false;
 
 //Расчёт бюджета на 1 день
-moneyDay = money/30;
+moneyDay = appData.money / 30;
 
 //Выводим сообщение с количетсвом бюджета на 1 день с точностью до 2 знаков
 alert("Бюджет на 1 день: " + (parseInt(moneyDay * 100) / 100) + " руб.");
