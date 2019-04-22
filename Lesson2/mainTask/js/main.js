@@ -19,7 +19,7 @@ for (let i = 0; i < 2; i++) {
     let a = prompt("Введите обязательную статью расходов в этом месяце"),
         b = prompt("Во сколько обойдется?");
 
-    if ((a !== null && a !== undefined && a !== '') && !isNaN(b)){
+    if ((a !== null && a !== undefined && a !== '' && a.length < 50) && !isNaN(b) && b !== null && b !== '' && b !== undefined && b.length < 50){
         console.log("Проверка прошла успешно. Данные записаны в expenses");
         appData.expenses[a] = b;
     } else {
@@ -37,7 +37,7 @@ for (let i = 0; i < 2; i++) {
 //     let a = prompt("Введите обязательную статью расходов в этом месяце"),
 //         b = prompt("Во сколько обойдется?");
 
-//     if ((a !== null && a !== undefined && a !== '') && !isNaN(b)) {
+//     if ((a !== null && a !== undefined && a !== '' && a.length < 50) && !isNaN(b) && b !== null && b !== '' && b !== undefined && b.length < 50) {
 //         console.log("Проверка прошла успешно. Данные записаны в expenses");
 //         appData.expenses[a] = b;
 //     } else {
@@ -55,7 +55,7 @@ for (let i = 0; i < 2; i++) {
 //     b = prompt("Во сколько обойдется?");
 //     num++;
 
-//     if ((a !== null && a !== undefined && a !== '') && !isNaN(b)) {
+//     if ((a !== null && a !== undefined && a !== '' && a.length < 50) && !isNaN(b) && b !== null && b !== '' && b !== undefined && b.length < 50) {
 //         console.log("Проверка прошла успешно. Данные записаны в expenses");
 //         appData.expenses[a] = b;
 //     } else {
