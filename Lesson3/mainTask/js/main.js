@@ -71,7 +71,7 @@ function chooseOptExpenses() {
     for (let i = 0; i < 3; i++) {
         let a = prompt("Статья необязательных расходов?", '');
     
-        if (a === null || a === ""){
+        if (a === null || a === "" || !isNaN(a)){
             i--;
             alert("Введите название необязательных расходов");
             continue;
