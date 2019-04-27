@@ -9,6 +9,12 @@ let body = document.querySelector ('body'),
 //Меняю местами пункты меню
 menu.insertBefore(menuItem[2], menuItem[1]);
 
+//Добавляю пятый элемент
+let menuItemNew = document.createElement ('li');
+menuItemNew.textContent = 'Пятый пункт';
+menuItemNew.classList.add('menu-item');
+menu.appendChild(menuItemNew);
+
 //Меняю картинку
 body.style.background = "url(../first_dz/img/apple_true.jpg) center no-repeat";
 
