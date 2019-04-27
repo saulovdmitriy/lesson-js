@@ -139,5 +139,4 @@ function isNotNumeric(n) {
     return !( !isNaN(parseFloat(n)) && isFinite(n) );
 }
 
-
 console.log(appData);
