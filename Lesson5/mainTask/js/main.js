@@ -1,6 +1,6 @@
 "use strict";
 
-const budgetValue = document.querySelector ('.budget-value'),
+let budgetValue = document.querySelector ('.budget-value'),
     dayBudgetValue = document.querySelector ('.daybudget-value'),
     levelValue = document.querySelector ('.level-value'),
     expensesValue = document.querySelector ('.expenses-value'),
@@ -49,7 +49,7 @@ const budgetValue = document.querySelector ('.budget-value'),
     console.log(yearSavingsValue);
 
     console.log(expensesItem);
-    
+
     console.log(expensesBtn);
     console.log(optionalExpensesBtn);
     console.log(countBtn);
