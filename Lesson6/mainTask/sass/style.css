@@ -85,6 +85,13 @@ a:active {
   margin: 10px 5px;
   font-size: 14px;
   color: #222;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.data .expenses-item:focus, .data .optionalexpenses-item:focus, .data .choose-income:focus, .data .choose-sum:focus, .data .choose-percent:focus {
+  -webkit-box-shadow: 0px -0.5px 5px 0 white;
+          box-shadow: 0px -0.5px 5px 0 white;
 }
 
 .data .expenses-item::-webkit-input-placeholder, .data .optionalexpenses-item::-webkit-input-placeholder, .data .choose-income::-webkit-input-placeholder, .data .choose-sum::-webkit-input-placeholder, .data .choose-percent::-webkit-input-placeholder {
@@ -240,8 +247,15 @@ a:active {
   margin: 10px 5px;
   font-size: 14px;
   color: #222;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   width: 80px;
   height: 30px;
   margin-left: 5px;
+}
+
+.result .time-data .year-value:focus, .result .time-data .month-value:focus, .result .time-data .day-value:focus {
+  -webkit-box-shadow: 0px -0.5px 5px 0 white;
+          box-shadow: 0px -0.5px 5px 0 white;
 }
 /*# sourceMappingURL=style.css.map */
