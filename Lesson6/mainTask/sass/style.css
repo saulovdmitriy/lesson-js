@@ -28,7 +28,7 @@ a:active {
 }
 
 .app {
-  background-color: #faf8f5;
+  background-color: #9b5daf;
   min-height: 800px;
 }
 
@@ -48,11 +48,12 @@ a:active {
 
 .title {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 50px;
   font-weight: 500;
-  font-size: 20px;
-  color: #262626;
+  font-size: 26px;
+  color: #fff;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .main {
@@ -64,61 +65,62 @@ a:active {
 }
 
 .data .choose-expenses, .data .optionalexpenses, .data .count-budget, .data .choose-income-label {
-  margin: 13px 0px;
+  margin: 20px 0px;
   font-weight: 500;
   font-size: 14px;
   color: #262626;
   text-align: center;
+  color: #f3dbdb;
 }
 
 .data .expenses-item, .data .optionalexpenses-item, .data .choose-income, .data .choose-sum, .data .choose-percent {
   height: 35px;
-  width: calc((100%/2) - 4px);
-  border-radius: 2.5px;
+  width: calc((100%/2) - 12px);
+  border-radius: 20px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
           box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
   border: none;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin: 10px 5px;
   font-size: 14px;
-  color: #a7a7a7;
+  color: #222;
 }
 
 .data .expenses-item::-webkit-input-placeholder, .data .optionalexpenses-item::-webkit-input-placeholder, .data .choose-income::-webkit-input-placeholder, .data .choose-sum::-webkit-input-placeholder, .data .choose-percent::-webkit-input-placeholder {
-  opacity: .3;
+  opacity: .7;
 }
 
 .data .expenses-item:-ms-input-placeholder, .data .optionalexpenses-item:-ms-input-placeholder, .data .choose-income:-ms-input-placeholder, .data .choose-sum:-ms-input-placeholder, .data .choose-percent:-ms-input-placeholder {
-  opacity: .3;
+  opacity: .7;
 }
 
 .data .expenses-item::-ms-input-placeholder, .data .optionalexpenses-item::-ms-input-placeholder, .data .choose-income::-ms-input-placeholder, .data .choose-sum::-ms-input-placeholder, .data .choose-percent::-ms-input-placeholder {
-  opacity: .3;
+  opacity: .7;
 }
 
 .data .expenses-item::placeholder, .data .optionalexpenses-item::placeholder, .data .choose-income::placeholder, .data .choose-sum::placeholder, .data .choose-percent::placeholder {
-  opacity: .3;
+  opacity: .7;
 }
 
 .data .expenses-item-btn, .data .optionalexpenses-btn, .data .count-budget-btn {
-  width: 70px;
-  height: 30px;
+  width: 130px;
+  height: 40px;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   border: none;
-  border-radius: 2.5px;
+  border-radius: 20px;
   background-image: linear-gradient(336deg, #ffbd75, #ff964b), linear-gradient(#ffffff, #ffffff);
   -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
           box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
   color: #fff;
-  font-weight: 100;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
 }
 
 .data .optionalexpenses-item {
-  width: calc((100%/3) - 4px);
+  width: calc((100%/3) - 13px);
 }
 
 .data .count-budget-btn {
@@ -135,10 +137,15 @@ a:active {
   margin: 0 auto;
   margin-top: 20px;
   text-align: center;
+  color: #f3dbdb;
 }
 
 .data .checksavings input {
   width: 30px;
+}
+
+.data label {
+  color: #f3dbdb;
 }
 
 .data .choose-sum, .data .choose-percent {
@@ -147,18 +154,18 @@ a:active {
 }
 
 .data .start {
-  width: 70px;
-  height: 30px;
+  width: 130px;
+  height: 40px;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   border: none;
-  border-radius: 2.5px;
+  border-radius: 20px;
   background-image: linear-gradient(336deg, #ffbd75, #ff964b), linear-gradient(#ffffff, #ffffff);
   -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
           box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
   color: #fff;
-  font-weight: 100;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
   width: 200px;
   height: 45px;
@@ -183,9 +190,10 @@ a:active {
   width: 90%;
   min-height: 400px;
   margin: 0 auto;
-  margin-top: 42px;
+  margin-top: 54px;
   padding: 25px;
   background-color: #fff;
+  border-radius: 20px;
   -webkit-box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
           box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
 }
@@ -217,22 +225,23 @@ a:active {
 .result .time-data .year, .result .time-data .month, .result .time-data .day {
   font-size: 16px;
   font-weight: 500;
+  color: #f3dbdb;
 }
 
 .result .time-data .year-value, .result .time-data .month-value, .result .time-data .day-value {
   height: 35px;
-  width: calc((100%/2) - 4px);
-  border-radius: 2.5px;
+  width: calc((100%/2) - 12px);
+  border-radius: 20px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
           box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
   border: none;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin: 10px 5px;
   font-size: 14px;
-  color: #a7a7a7;
+  color: #222;
   width: 80px;
   height: 30px;
-  margin-left: 25px;
+  margin-left: 5px;
 }
 /*# sourceMappingURL=style.css.map */

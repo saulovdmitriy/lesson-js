@@ -3,7 +3,7 @@
     box-sizing: border-box
     margin: 0
     padding: 0
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu'
     outline: none
 a	
 	color:inherit
@@ -24,7 +24,7 @@ a
 		text-decoration: none
 		color:inherit
 .app
-    background-color: #faf8f5
+    background-color: #9b5daf
     min-height: 800px
 .logo
     width: 100%
@@ -37,11 +37,12 @@ a
         color: $active
 .title
     width: 100%
-    margin-top: 30px
+    margin-top: 50px
     font-weight: 500
-    font-size: 20px
-    color: $text-color
+    font-size: 26px
+    color: #fff
     text-align: center
+    text-transform: uppercase
 .main
     display: flex
     margin: 0% 10%
@@ -49,14 +50,15 @@ a
 .data
     .choose-expenses, .optionalexpenses, .count-budget, .choose-income-label
         @include header
+        color: $text-color-lighten
     .expenses-item, .optionalexpenses-item, .choose-income, .choose-sum, .choose-percent
         @include input
         &::placeholder
-            opacity: .3
+            opacity: .7
     .expenses-item-btn, .optionalexpenses-btn, .count-budget-btn
         @include btn
     .optionalexpenses-item
-        width: calc((100%/3) - 4px)
+        width: calc((100%/3) - 13px)
     .count-budget-btn
         width: 120px
     .choose-income
@@ -67,8 +69,11 @@ a
         margin: 0 auto
         margin-top: 20px
         text-align: center
+        color: $text-color-lighten
         input
             width: 30px
+    label
+        color: $text-color-lighten
     .choose-sum, .choose-percent
         width: 30%
         margin: 15px
@@ -88,9 +93,10 @@ a
         width: 90%
         min-height: 400px
         margin: 0 auto
-        margin-top: 42px
+        margin-top: 54px
         padding: 25px
         background-color: #fff
+        border-radius: 20px
         box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1)
         .budget, .budget-value, .daybudget, .daybudget-value, .level, .level-value, .expenses, .expenses-value, .optionalexpenses, .optionalexpenses-value, .income, .income-value, .monthsavings, .monthsavings-value, .yearsavings, .yearsavings-value
             width: 48%
@@ -110,8 +116,9 @@ a
         .year, .month, .day 
             font-size: 16px
             font-weight: 500
+            color: $text-color-lighten
         .year-value, .month-value, .day-value
             @include input
             width: 80px
             height: 30px
-            margin-left: 25px
+            margin-left: 5px
