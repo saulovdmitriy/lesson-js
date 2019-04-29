@@ -63,7 +63,7 @@ startBtn.addEventListener ('click', function() {
     budgetValue.textContent = money.toFixed();
     yearValue.value = new Date(Date.parse(time)).getFullYear();
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
-    dayValue.value = new Date(Date.parse(time)).getDay();
+    dayValue.value = new Date(Date.parse(time)).getDate();
 });
 
 expensesBtn.addEventListener ('click', function() {
