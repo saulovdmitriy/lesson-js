@@ -100,7 +100,7 @@ countBtn.addEventListener ('click', function() {
         for (let i in appData.expenses) {
             allExpenses += appData.expenses[i];
         }
-        appData.moneyDay = (appData.budget - allExpenses / 30).toFixed();
+        appData.moneyDay = ((appData.budget - allExpenses) / 30).toFixed();
         dayBudgetValue.textContent = appData.moneyDay;
 
         if (appData.moneyDay < 100) {
@@ -224,6 +224,8 @@ for (let i = 0; i<expensesItem.length; i++){
             if (isExpensesFull && appData.budget > 0){
                 expensesBtn.removeAttribute('disabled');
                 expensesBtn.style.backgroundImage = '';
+
+                count();
             } else {
                 expensesBtn.disabled = 'disabled';
                 expensesBtn.style.backgroundImage = 'none';
@@ -256,14 +258,8 @@ for (let i = 0; i<optionalExpensesItem.length; i++){
     });
 }
 
+//функция для снятия блокировки кнопки
 function count() {
-    //если значение бюджет в объекте введено, то активируем кнопку рассчитать
-    if (appData.budget > 0) {
-        countBtn.removeAttribute('disabled');
-        countBtn.style.backgroundImage = '';
-    } else {
-        countBtn.disabled = 'disabled';
-        countBtn.style.backgroundImage = 'none';
-    }
+    countBtn.removeAttribute('disabled');
+    countBtn.style.backgroundImage = '';
 }
-count();
