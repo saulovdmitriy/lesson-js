@@ -98,10 +98,11 @@ countBtn.addEventListener ('click', function() {
     if (appData.budget != undefined) {
         let allExpenses = 0;
         for (let i in appData.expenses) {
-            allExpenses += appData.expenses[i];
+            allExpenses += +appData.expenses[i];
         }
-        appData.moneyDay = ((appData.budget - allExpenses) / 30).toFixed();
-        dayBudgetValue.textContent = appData.moneyDay;
+        console.log(allExpenses);
+        appData.moneyDay = (appData.budget - allExpenses) / 30;
+        dayBudgetValue.textContent = appData.moneyDay.toFixed();
 
         if (appData.moneyDay < 100) {
             levelValue.textContent = "Минимальный уровень достатка";
@@ -172,10 +173,6 @@ for (let i = 0; i<expensesItem.length; i++){
     if(i % 2 === 0){ // для чётных (названия расходов)
         expensesItem[i].addEventListener('input', function() {
         let isExpensesFull = true;
-        
-        // блокирую кнопку рассчитать пока не утвердим новые расходы
-        startBtn.disabled = 'disabled';
-        startBtn.style.backgroundImage = 'none';
     
         // проверяю чтобы все поля были заполнены
         for (let j = 0; j < expensesItem.length; j++){
@@ -201,10 +198,6 @@ for (let i = 0; i<expensesItem.length; i++){
                 expensesItem[i].oldValue = '';
             }
             let isExpensesFull = true;
-        
-            // блокируем кнопку рассчитать пока не утвердим новые расходы
-            startBtn.disabled = 'disabled';
-            startBtn.style.backgroundImage = 'none';
             
             // если некорректный ввод для поля, то восстанавливаем предыдущее значение
             if ( /^\d+$/.test(expensesItem[i].value) || expensesItem[i].value === '') {
