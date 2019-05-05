@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafa;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+.timer__hours, .timer__minutes, .timer__seconds {
+    width: 67px;
+    text-align: right;
+    font-size: 60px;
+    color: #544eb4;
+    padding: 0 20px;
+}
+
+.timer__seconds {
+    color: #ff0000ad;
+}
+
+.divider {
+    font-size: 40px;
+}
