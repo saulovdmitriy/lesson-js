@@ -93,7 +93,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     function modal(btn) {
 
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', function() {
 
             overlay.style.display = 'block';
             this.classList.add('more-splash');
