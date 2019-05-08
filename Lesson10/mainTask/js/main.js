@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         });
 
-        close.addEventListener('click', () => {
+        close.addEventListener('click', function() {
 
             overlay.style.display = 'none';
             more.classList.remove('more-splash');
