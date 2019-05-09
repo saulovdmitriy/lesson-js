@@ -129,23 +129,18 @@ window.addEventListener('DOMContentLoaded', function() {
         input = form.getElementsByTagName('input'),
         statusMessage = document.createElement('div');
 
-        for (let i = 0; i < input.length; i++) {
-            input[i].addEventListener('input', function() {
-                const regex = /^(?:\+?1[-. ]?)?(?:\(?([0-9]{3})\)?[-. ]?)?([0-9]{3})[-. ]?([0-9]{4})$/;
-                if (regex.test(input[i])) {
-                    let parts = input[i].match(regex);
-                    let phone = "";
-                    if (parts[1]) { 
-                        phone += "+7 (" + parts[1] + ") "; 
-                    }
-                    phone += parts[2] + "-" + parts[3];
-                    
-                    return phone;
+        let myPhone = document.querySelectorAll('input[type="tel"]');
+
+        for (let i = 0; i < myPhone.length; i++) {
+            myPhone[i].addEventListener('input',  function() {
+        
+                if (/^\+?[()\d \-]*$/.test(myPhone[i].value) || myPhone[i].value === '') {
+                    myPhone[i].oldValue = myPhone[i].value;
                 } else {
-                    return input[i].value;
+                    myPhone[i].value = '';
                 }
-            });
-        }
+            })
+        };
 
 
         statusMessage.classList.add('status');
