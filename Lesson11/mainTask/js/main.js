@@ -113,21 +113,24 @@ window.addEventListener('DOMContentLoaded', function() {
 
     //Добавляю функцию открытия окна на каждую кнопку "Подробнее"
     for (let i = 0; i < descTab.length; i++) {
+
         modal(descBtn[i]);
+
     }
 
 
     //Modal
 
     let message = {
-        loading: 'Загрузка...',
-        success: 'Спасибо! Скоро мы с вами свяжемся!',
-        failure: 'Что-то пошло не так...'
+        loading: `<img src="img/ajax-loader.gif" class="status__img">`,
+        success: `<img src="img/checked.png" class="status__img"><span class="status__message">В ближайшее время мы с вами свяжемся</span>`,
+        failure: `<img src="img/warning.png" class="status__img"><span class="status__message">Введите данные снова</span>`
     };
 
     let form = document.querySelector('.main-form'),
         input = form.getElementsByTagName('input'),
         statusMessage = document.createElement('div');
+        
 
         let myPhone = document.querySelectorAll('input[type="tel"]');
 

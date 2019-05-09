@@ -717,3 +717,23 @@ header ul li:before {
 .overlay .popup-form__btn:hover {
   box-shadow: 0 0 10px #c78030;
 }
+
+
+/* Классы для сообщений об отправке данных */
+
+.status {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.status__img {
+  width: 46px;
+  height: 46px;
+}
+
+.status__message {
+  display: inline-block;
+  margin-left: 15px;
+  color: #fff;
+}
