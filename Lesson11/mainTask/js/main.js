@@ -136,14 +136,18 @@ window.addEventListener('DOMContentLoaded', function() {
 
         for (let i = 0; i < myPhone.length; i++) {
             myPhone[i].addEventListener('input',  function() {
+
+                if ( !myPhone[i].oldValue ) {
+                    myPhone[i].oldValue = '';
+                }
         
                 if (/^\+?[()\d \-]*$/.test(myPhone[i].value) || myPhone[i].value === '') {
                     myPhone[i].oldValue = myPhone[i].value;
                 } else {
-                    myPhone[i].value = '';
+                    myPhone[i].value = myPhone[i].oldValue;
                 }
-            })
-        };
+            });
+        }
 
 
         statusMessage.classList.add('status');
