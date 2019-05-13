@@ -113,13 +113,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
     //Добавляю функцию открытия окна на каждую кнопку "Подробнее"
     for (let i = 0; i < descTab.length; i++) {
-
         modal(descBtn[i]);
-
     }
 
 
-    //Modal
+    //Send Data
 
     let message = {
         loading: `<img src="img/ajax-loader.gif" class="status__img">`,
@@ -127,72 +125,67 @@ window.addEventListener('DOMContentLoaded', function() {
         failure: `<img src="img/warning.png" class="status__img"><span class="status__message">Введите данные снова</span>`
     };
 
-    let form = document.querySelector('.main-form'),
-        input = form.getElementsByTagName('input'),
-        statusMessage = document.createElement('div');
-        
+    let input = document.querySelectorAll('.form__input'),
+        statusMessage = document.createElement('div'),
+        myPhone = document.querySelectorAll('input[type="tel"]');
 
-        let myPhone = document.querySelectorAll('input[type="tel"]');
+    for (let i = 0; i < myPhone.length; i++) {
+        myPhone[i].addEventListener('input',  function() {
 
-        for (let i = 0; i < myPhone.length; i++) {
-            myPhone[i].addEventListener('input',  function() {
-
-                if ( !myPhone[i].oldValue ) {
-                    myPhone[i].oldValue = '';
-                }
-        
-                if (/^\+?[()\d \-]*$/.test(myPhone[i].value) || myPhone[i].value === '') {
-                    myPhone[i].oldValue = myPhone[i].value;
-                } else {
-                    myPhone[i].value = myPhone[i].oldValue;
-                }
-            });
-        }
-
-
-        statusMessage.classList.add('status');
-
-        document.body.addEventListener('submit', (event) => {  // submit - всегда отправка  СРАБАТЫВАЕТ ТОЛЬКО НА ФОРМАХ
-            let target = event.target;
-            event.preventDefault(); 
-            target.appendChild(statusMessage);
-
-            let request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            // request.send(target);
-            //Для отправки в формате JSON
-            // request.setRequestHeader('Content-Type', 'application/json; charset=utd-8');
-
-            let formData = new FormData(target);
-
-            // Для отправки в формате JSON
-            // let obj = {};
-            // formData.forEach(function(value, key) {
-            //     obj[key] = value;
-            // });
-
-            // let json = JSON.stringify(obj);
-
-            // request.send(json);
-
-            request.send(formData);
-
-            request.addEventListener('readystatechange', function() {
-                if (request.readyState < 4) {
-                    statusMessage.innerHTML = message.loading;
-                } else if (request.readyState === 4 && request.status == 200) {
-                    statusMessage.innerHTML = message.success;
-                } else {
-                    statusMessage.innerHTML = message.failure;
-                }
-            });
-
-            for (let i = 0; i < input.length; i++) {
-                input[i].value = '';
+            if ( !myPhone[i].oldValue ) {
+                myPhone[i].oldValue = '';
+            }
+    
+            if (/^\+?[()\d \-]*$/.test(myPhone[i].value) || myPhone[i].value === '') {
+                myPhone[i].oldValue = myPhone[i].value;
+            } else {
+                myPhone[i].value = myPhone[i].oldValue;
             }
         });
-        
-});
+    }
 
+
+    statusMessage.classList.add('status');
+
+    document.body.addEventListener('submit', (event) => {  // submit - всегда отправка  СРАБАТЫВАЕТ ТОЛЬКО НА ФОРМАХ
+        let target = event.target;
+        event.preventDefault(); 
+        target.appendChild(statusMessage);
+
+        let request = new XMLHttpRequest();
+        request.open('POST', 'server.php');
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        // request.send(target);
+        //Для отправки в формате JSON
+        // request.setRequestHeader('Content-Type', 'application/json; charset=utd-8');
+
+        let formData = new FormData(target);
+
+        // Для отправки в формате JSON
+        // let obj = {};
+        // formData.forEach(function(value, key) {
+        //     obj[key] = value;
+        // });
+
+        // let json = JSON.stringify(obj);
+
+        // request.send(json);
+
+        request.send(formData);
+
+        request.addEventListener('readystatechange', function() {
+            if (request.readyState < 4) {
+                statusMessage.innerHTML = message.loading;
+            } else if (request.readyState === 4 && request.status == 200) {
+                statusMessage.innerHTML = message.success;
+            } else {
+                statusMessage.innerHTML = message.failure;
+            }
+        });
+
+        for (let i = 0; i < input.length; i++) {
+            input[i].value = '';
+        }
+    });
+});
