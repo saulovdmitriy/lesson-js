@@ -132,14 +132,18 @@ window.addEventListener('DOMContentLoaded', function() {
 
     for (let i = 0; i < myPhone.length; i++) {
         myPhone[i].addEventListener('input',  function() {
-    
-            if (/^\+?[()\d \-]*$/.test(myPhone[i].value) || myPhone[i].value === '') {
-                myPhone[i].oldValue = myPhone[i].value;
-            } else {
-                myPhone[i].value = '';
+
+            if (!(/^\+?[()\d \-]*$/.test(myPhone[i].value))) {
+                this.value = this.value.slice(0, -1);
             }
+
+            console.log(/^\+?[()\d \-]*$/.test(myPhone[i].value));
+            
         });
+        
     }
+
+    // !(/^(\+|\d)|\d/g
 
     statusMessage.classList.add('status');
 
@@ -258,12 +262,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
         persons.addEventListener('input', function() {
 
-            validInput(persons);  
+            if (!(validInput(this.value))) {
+                this.value = this.value.slice(0, -1);
+            }
 
             personsSum = +this.value;
 
             if(personsSum > 0 && daysSum > 0) {
-                total = daysSum * personsSum * 4000;
+                total = daysSum * personsSum * place.options[place.selectedIndex].value * 4000;
                 totalValue.innerHTML = total;
             } else {
                 totalValue.innerHTML = 0;
@@ -272,12 +278,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
         restDays.addEventListener('input', function() {
 
-            validInput(restDays);
+            if (!(validInput(this.value))) {
+                this.value = this.value.slice(0, -1);
+            }
 
             daysSum = +this.value;
 
             if(personsSum > 0 && daysSum > 0) {
-                total = daysSum * personsSum * 4000;
+               total = daysSum * personsSum * place.options[place.selectedIndex].value * 4000;
                 totalValue.innerHTML = total;
             } else {
                 totalValue.innerHTML = 0;
@@ -295,14 +303,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
         function validInput(elem) {
-            elem.addEventListener("input", function() {
-                let i = 0,
-                    val = this.value.replace(/\D/g, "");
-
-                this.value = val.replace(/./g, function(a) {
-                    return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
-                });
-            });
+            return /\d$/.test(elem);
         }
 
             
