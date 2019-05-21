@@ -13,7 +13,7 @@ $(window).ready(function () {
     $('.modal').css('marginTop', '-50rem');
 
     function showModal() {
-        $('.modal').animate({marginTop: '5rem', borderRadius: '15px'}, 500).show();
+        $('.modal').animate({top: '5rem', borderRadius: '15px'}, 500).show();
         $('.overlay').fadeIn(500);
     }
 
